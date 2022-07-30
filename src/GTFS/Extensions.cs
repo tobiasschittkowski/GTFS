@@ -71,7 +71,7 @@ namespace GTFS
         /// </summary>
         public static int FastParse(this char value)
         {
-            switch(value)
+            switch (value)
             {
                 case '0':
                     return 0;
@@ -308,7 +308,7 @@ namespace GTFS
         /// <returns></returns>
         public static int? ToArgbInt(this string value)
         {
-            if (string.IsNullOrWhiteSpace(value))
+            if (string.IsNullOrWhiteSpace(value) || value.Length < 6)
             { // detect empty strings.
                 return null;
             }
