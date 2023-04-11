@@ -23,6 +23,7 @@
 using GTFS.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GTFS.Filters
 {
@@ -213,9 +214,9 @@ namespace GTFS.Filters
             }
 
             // filter shapes.
-            foreach(var shape in feed.Shapes)
+            foreach (var shape in feed.Shapes)
             {
-                if(shapeIds.Contains(shape.Id))
+                if (shapeIds.Contains(shape.Id))
                 {
                     filteredFeed.Shapes.Add(shape);
                 }

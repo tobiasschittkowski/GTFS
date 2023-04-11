@@ -111,9 +111,9 @@ namespace GTFS.IO.CSV
         /// <returns></returns>
         public bool MoveNext()
         {
-            if (_stream.Peek() > -1)
+            string line;
+            if ((line = _stream.ReadLine()) != null)
             {
-                string line = _stream.ReadLine();
                 if (this.LinePreprocessor != null)
                 {
                     line = this.LinePreprocessor.Invoke(line);
